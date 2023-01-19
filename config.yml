@@ -24,7 +24,6 @@ markup:
   asciidocExt:
     backend: html5
     extensions:
-      - asciidoctor-html5s
       - asciidoctor-diagram
     failureLevel: fatal
     noHeaderOrFooter: true
