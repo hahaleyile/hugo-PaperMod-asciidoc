@@ -1,0 +1,32 @@
+td.icon [class^="fa icon-"] {
+    font-family: 'Font Awesome 6 Free';
+    font-size: 1.5em;
+    cursor: default;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-note::before {
+    content: "\f249";
+    color: #448aff;
+}
+
+.icon-tip::before {
+    content: "\f0eb";
+    color: #00bfa5;
+}
+
+.icon-important::before {
+    content: "\f06a";
+    color: #651fff;
+}
+
+.icon-warning::before {
+    content: "\f071";
+    color: #ff9100;
+}
+
+.icon-caution::before {
+    content: "\f057";
+    color: #ff5252;
+}

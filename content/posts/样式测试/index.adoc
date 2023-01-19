@@ -1,0 +1,706 @@
+---
+title: "样式测试"
+categories:
+- "测试"
+tags:
+- "测试"
+- "样式"
+date: 2023-01-06T03:13:23+08:00
+draft: false
+---
+= 测试
+
+乔姆斯基在研究语言的过程中，从产生语言的角度发现了一种模型用来描述语言，它就是文法。
+
+== 文本格式化
+
+
+normal, _italic_, *bold*, +mono+.
+
+``double quoted'', `single quoted'.
+
+normal, ^super^, ~sub~.
+
+Command: `ls -al`
+
++mono *bold*+
+
+`passthru *bold*`
+
+Path: '/some/filez.txt', '.b'
+
+[red]#red text# [yellow-background]#on yellow#
+[big]#large# [red yellow-background big]*all bold*
+
+
+.colors
+[aqua]#aqua#
+[aqua-background]#aqua-background#
+[black]#black#
+[black-background]#black-background#
+[blue]#blue#
+[blue-background]#blue-background#
+[fuchsia]#fuchsia#
+[fuchsia-background]#fuchsia-background#
+[gray]#gray#
+[gray-background]#gray-background#
+[green]#green#
+[green-background]#green-background#
+[lime]#lime#
+[lime-background]#lime-background#
+[maroon]#maroon#
+[maroon-background]#maroon-background#
+[navy]#navy#
+[navy-background]#navy-background#
+[olive]#olive#
+[olive-background]#olive-background#
+[purple]#purple#
+[purple-background]#purple-background#
+[red]#red#
+[red-background]#red-background#
+[silver]#silver#
+[silver-background]#silver-background#
+[teal]#teal#
+[teal-background]#teal-background#
+[white]#white#
+[white-background]#white-background#
+[yellow]#yellow#
+[yellow-background]#yellow-background#
+
+
+
+Chars: n__i__**b**++m++[red]##r##
+
+Escaped:
+\_italic_, +++_italic_+++,
+t\__e__st, +++t__e__st+++,
++++<b>bold</b>+++, $$<b>normal</b>$$
+\&#182;
+\`not single quoted'
+\`\`not double quoted''
+
+---
+
+== 段落 
+
+在研究语言的过程中，我们往往需要判断一个字符串是否属于某个语言。
+如果这个的语言是一个有穷集合那还好说，我们只需要遍历语言中的所有字符串就能判断出我们要找的字符串是不是属于该语言。
+但当语言是一个无穷集合时，事情就会变得比较棘手。
+幸运的是，一般来说语言都有一个自己的结构，称为语法。
+通过一个适当的模型，我们就能表打出语言的结构特征，而这个模型就是文法。
+
+有了文法之后，我们就可以用一个有穷描述来描述语言，文法解决了语言的定义问题（从另一种角度定义无穷字符串集合）。
+
+用文法不仅能描述出语言的结构特征，还能生成该语言的所有句子。
+用文法生成的集合就是它所描述的语言。
+但是，文法也有自己的能力上限，不是所有的语言都可以用文法来描述。
+正则文法那一部分我们就能监视到。
+
+== 多级标题
+
+=== 三级 1
+
+==== 四级1
+
+=== 三级2
+
+==== 四级2
+
+== 样例块
+
+.Optional Title
+====
+This is an example
+single-paragraph note.
+very very very very very very very very very very very very very very very very very very very very very very very long.
+
+This is the second paragraph.
+====
+
+
+.Optional Title
+[example]
+This is an example
+single-paragraph note.
+
+结束测试。
+
+
+== 补充块
+
+.Optional Title
+****
+*Sidebar* Block
+
+Use: sidebar notes :)
+****
+
+== 警告块
+
+NOTE: Note.
+
+TIP: Tip.
+
+IMPORTANT: Important.
+
+CAUTION: Caution.
+
+WARNING: Warning.
+
+这是一个 1 倍大小的 icon:heart[] 爱心。
+这是一个 2 倍大小的 icon:heart[2x] 爱心。
+
+[IMPORTANT]
+.Feeding the Werewolves
+====
+While werewolves are hardy community members, keep in mind the following dietary concerns:
+
+. They are allergic to cinnamon.
+
+[NOTE]
+=====
+a note.
+=====
+
+. More than two glasses of orange juice in 24 hours makes them howl in harmony with alarms and sirens.
+. Celery makes them sad.
+====
+
+== 代码块
+
+[source,html]
+.html 标题
+----
+<style>
+
+pre.rouge .hll {
+  background-color: #ffc; 
+}
+pre.rouge .hll * {
+  background-color: initial; 
+}
+</style>
+----
+
+代码块间距测试。
+
+[source,ruby]
+----
+require 'sinatra' <1>
+
+get '/hi' do <2> <3>
+  "Hello World! very very very very very very very very very very very very very very very very very very very very very very very long."
+end
+----
+<1> Library import
+<2> URL mapping
+<3> Response block
+
+这是一个块内代码 `GetUrl(http://test.com)` 测试。
+
+== 直译块
+
+.Optional Title
+....
+*Literal* Block
+
+Use: workaround when literal
+paragraph (indented) like
+1. First.
+2. Second.
+incorrectly processed as list.
+....
+
+== 引用块
+
+.Optional Title
+[quote, cite author, cite source]
+____
+*Quote* Block
+
+Use: cite somebody
+____
+
+[quote, cite author, cite source]
+____
+*Quote* Block
+
+Use: cite somebody
+  "Hello World! very very very very very very very very very very very very very very very very very very very very very very very long."
+____
+
+== 折叠块
+
+.链路层和网络层信息收集
+[%collapsible%open]
+====
+
+折叠块测试。
+
+.有线网络监听
+=====
+概要：监听能捕获的网络段和 IP，同时记录下各个 IP 开启的服务（如 ICMP、HTTP）。
+
+工具：
+
+[%hardbreaks]
+参考文献：
+=====
+
+
+.无线网络监听
+=====
+概要：监听周围设备的信道、加密方式、SSID、BSSID、ESSID。
+
+工具：
+
+[%hardbreaks]
+参考文献：
+=====
+
+测试结束。
+====
+
+== 图片
+
+[plantuml]
+----
+skinparam monochrome true
+skinparam ranksep 20
+skinparam dpi 150
+skinparam arrowThickness 0.7
+skinparam packageTitleAlignment left
+skinparam usecaseBorderThickness 0.4
+skinparam defaultFontSize 12
+skinparam rectangleBorderThickness 1
+
+rectangle "Main" {
+  (main.view)
+  (singleton)
+}
+rectangle "Base" {
+  (base.component)
+  (component)
+  (model)
+}
+rectangle "<b>main.ts</b>" as main_ts
+
+(component) ..> (base.component)
+main_ts ==> (main.view)
+(main.view) --> (component)
+(main.view) ...> (singleton)
+(singleton) ---> (model)
+----
+
+image::https://mgreau.com/posts/images/asciidoc-ghpages-github-token.png[align="center"]
+
+接下来看一个标题测试：
+
+.Bytefield 
+[bytefield]  
+----
+(defattrs :bg-green {:fill "#a0ffa0"})
+(defattrs :bg-yellow {:fill "#ffffa0"})
+(defattrs :bg-pink {:fill "#ffb0a0"})
+(defattrs :bg-cyan {:fill "#a0fafa"})
+(defattrs :bg-purple {:fill "#e4b5f7"})
+
+(defn draw-group-label-header
+  [span label]
+  (draw-box (text label [:math {:font-size 12}]) {:span span :borders #{} :height 14}))
+
+(defn draw-remotedb-header
+  [kind args]
+  (draw-column-headers)
+  (draw-group-label-header 5 "start")
+  (draw-group-label-header 5 "TxID")
+  (draw-group-label-header 3 "type")
+  (draw-group-label-header 2 "args")
+  (draw-group-label-header 1 "tags")
+  (next-row 18)
+
+  (draw-box 0x11 :bg-green)
+  (draw-box 0x872349ae [{:span 4} :bg-green])
+  (draw-box 0x11 :bg-yellow)
+  (draw-box (text "TxID" :math) [{:span 4} :bg-yellow])
+  (draw-box 0x10 :bg-pink)
+  (draw-box (hex-text kind 4 :bold) [{:span 2} :bg-pink])
+  (draw-box 0x0f :bg-cyan)
+  (draw-box (hex-text args 2 :bold) :bg-cyan)
+  (draw-box 0x14 :bg-purple)
+
+  (draw-box (text "0000000c" :hex [[:plain {:font-weight "light" :font-size 16}] " (12)"]) [{:span 4} :bg-purple])
+  (draw-box (hex-text 6 2 :bold) [:box-first :bg-purple])
+  (doseq [val [6 6 3 6 6 6 6 3]]
+    (draw-box (hex-text val 2 :bold) [:box-related :bg-purple]))
+  (doseq [val [0 0]]
+    (draw-box val [:box-related :bg-purple]))
+  (draw-box 0 [:box-last :bg-purple]))
+
+(draw-remotedb-header 0x4702 9)
+
+(draw-box 0x11)
+(draw-box 0x2104 {:span 4})
+(draw-box 0x11)
+(draw-box 0 {:span 4})
+(draw-box 0x11)
+(draw-box (text "length" [:math] [:sub 1]) {:span 4})
+(draw-box 0x14)
+
+(draw-box (text "length" [:math] [:sub 1]) {:span 4})
+(draw-gap "Cue and loop point bytes")
+
+(draw-box nil :box-below)
+(draw-box 0x11)
+(draw-box 0x36 {:span 4})
+(draw-box 0x11)
+(draw-box (text "num" [:math] [:sub "hot"]) {:span 4})
+(draw-box 0x11)
+(draw-box (text "num" [:math] [:sub "cue"]) {:span 4})
+
+(draw-box 0x11)
+(draw-box (text "length" [:math] [:sub 2]) {:span 4})
+(draw-box 0x14)
+(draw-box (text "length" [:math] [:sub 2]) {:span 4})
+(draw-gap "Unknown bytes" {:min-label-columns 6})
+(draw-bottom)
+----
+
+测试完毕。
+可以发现撒旦恢复本年度送我在那些佛埃及访问。额外惊人之举欧文二日而我却将
+
+== 列表
+
+.Bulleted
+* bullet
+* bullet
+- bullet
+- bullet
+* bullet
+** bullet
+** bullet
+*** bullet
+*** bullet
+**** bullet
+**** bullet
+***** bullet
+***** bullet
+**** bullet
+*** bullet
+** bullet
+* bullet
+
+列表继续的测试：
+
+. test
++
+this is a test
++
+. test
++
+this is a test
++
+this is a test
++
+. test
+.. test
+
+
+.Bulleted 2
+- bullet
+* bullet
+
+段落后接列表测试：
+
+.Ordered
+. number
+. number
+.. letter
+.. letter
+. number
+.. loweralpha
+.. loweralpha
+... lowerroman
+... lowerroman
+.... upperalpha
+.... upperalpha
+..... upperroman
+..... upperroman
+.... upperalpha
+... lowerroman
+.. loweralpha
+. number
+
+
+
+.Ordered 2
+a. letter
+b. letter
+.. letter2
+.. letter2
+.  number
+.  number
+1. number2
+2. number2
+3. number2
+4. number2
+.  number
+.. letter2
+c. letter
+
+
+.Checklist
+* [*] checked
+* [x] also checked
+* [ ] not checked
+* normal list item
+
+.Checklist interactive
+[%interactive]
+* [*] checked
+* [x] also checked
+* [ ] not checked
+* normal list item
+
+
+.Labeled
+Term 1::
+Definition 1
+Term 2::
+Definition 2
+Term 2.1;;
+Definition 2.1
+Term 2.2;;
+Definition 2.2
+Term 3::
+Definition 3
+Term 4:: Definition 4
+Term 4.1::: Definition 4.1
+Term 4.2::: Definition 4.2
+Term 4.2.1:::: Definition 4.2.1
+Term 4.2.2:::: Definition 4.2.2
+Term 4.3::: Definition 4.3
+Term 5:: Definition 5
+
+
+
+.Labeled 2
+Term 1;;
+Definition 1
+Term 1.1::
+Definition 1.1
+
+
+[horizontal]
+.Labeled horizontal
+Term 1:: Definition 1
+Term 2:: Definition 2
+[horizontal]
+Term 2.1;;
+Definition 2.1
+Term 2.2;;
+Definition 2.2
+Term 3::
+Definition 3
+Term 4:: Definition 4
+[horizontal]
+Term 4.1::: Definition 4.1
+Term 4.2::: Definition 4.2
+[horizontal]
+Term 4.2.1:::: Definition 4.2.1
+Term 4.2.2:::: Definition 4.2.2
+Term 4.3::: Definition 4.3
+Term 5:: Definition 5
+
+
+[qanda]
+.Q&A
+Question 1::
+Answer 1
+Question 2:: Answer 2
+
+
+
+.Indent is optional
+- bullet
+* another bullet
+1. number
+.  again number
+a. letter
+.. again letter
+
+.. letter
+. number
+
+* bullet
+- bullet
+
+
+
+.Break two lists
+. number
+. number
+
+Independent paragraph break list.
+
+. number
+
+.Header break list too
+. number
+
+--
+. List block define list boundary too
+. number
+. number
+--
+
+--
+. number
+. number
+--
+
+
+
+.Continuation
+- bullet
+continuation
+. number
+continuation
+* bullet
+
+  literal continuation
+
+.. letter
++
+Non-literal continuation.
++
+----
+any block can be
+
+included in list
+----
++
+Last continuation.
+
+
+
+.List block allow sublist inclusion
+- bullet
+* bullet
++
+--
+- bullet
+* bullet
+--
+* bullet
+- bullet
+. number
+.. letter
++
+--
+. number
+.. letter
+--
+.. letter
+. number
+
+== 表格
+
+.An example table
+[options="header,footer"]
+|=======================
+|Col 1|Col 2      |Col 3
+|1    |Item 1     |a
+|2    |Item 2     |b
+|3    |Item 3     |c
+|6    |Three items|d
+|=======================
+
+
+
+.CSV data, 15% each column
+[format="csv",width="60%",cols="4"]
+[frame="topbot",grid="none"]
+|======
+1,2,3,4
+a,b,c,d
+A,B,C,D
+|======
+
+
+
+[grid="rows",format="csv"]
+[options="header",cols="^,<,<s,<,>m"]
+|===========================
+ID,FName,LName,Address,Phone
+1,Vasya,Pupkin,London,+123
+2,X,Y,"A,B",45678
+|===========================
+
+
+
+.Multiline cells, row/col span
+|====
+|Date |Duration |Avg HR |Notes
+
+|22-Aug-08 .2+^.^|10:24 | 157 |
+Worked out MSHR (max sustainable
+heart rate) by going hard
+for this interval.
+
+|22-Aug-08 | 152 |
+Back-to-back with previous interval.
+
+|24-Aug-08 3+^|none
+
+|====
+
+== 数学公式
+
+构造产生语言 stem:[{a^nb^nc^n| n>=1}] 的文法。
+
+解：这个语言实际上是一个上下文有关语言 CSL，它不能用上下文无关文法表示。
+如果将 stem:[a^nb^n] 和 stem:[c^n] 分开表示，即构造文法如下：
+
+[stem]
+++++
+G->AB
+
+A->aAb|ab
+
+B->cB|c
+++++
+
+则它只能表示语言 stem:[{a^nb^nc^m|n>=1,m>=1}]，因为不在同一产生式的递归推导终结符，无法保证终结符的个数相同。
+只有递归表示位于同一产生式中，才能保证该产生式中的符号是同个数的。
+因此可以考虑将语言分成三部分：
+
+[stem]
+++++
+G->aABC | aBC
+++++
+
+这样 a、B、C 出现的个数相同，可惜此字符串是以 stem:[aa cdots a BCBC cdots BC] 形式出现的，因此我们需要添加产生式，调整非终结符的顺序：
+
+[stem]
+++++
+CB->BC
+++++
+
+这样既不改变 B 和 C 的数量，同时也把 C 都移到了最右边。
+
+最后，只有处于正确位置的 B、C 才能推导为终结符：
+
+[stem]
+++++
+aB->ab
+
+bB->b b
+
+bC->bc
+
+cC->c c
+++++
+
+这保证了 aBCBC 在不换位直接推导的时候会碰到 cB，进而无法推导下去。
+

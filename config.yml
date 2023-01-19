@@ -1,0 +1,101 @@
+baseURL: http://example.org/
+defaultContentLanguage: zh
+hasCJKLanguage: true
+title: 我的博客
+theme: hugo-PaperMod
+
+taxonomies:
+  category: categories
+  tag: tags
+
+Params:
+  ShowReadingTime: true
+  ShowWordCount: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  comments: false
+  ShowRssButtonInSectionTermList: true
+  disableSpecial1stPost: true 
+  hideSummary: false
+
+markup:
+  asciidocExt:
+    backend: html5
+    extensions:
+      - asciidoctor-html5s
+      - asciidoctor-diagram
+    failureLevel: fatal
+    noHeaderOrFooter: true
+    preserveTOC: false
+    safeMode: unsafe
+    sectionNumbers: false
+    trace: false
+    verbose: false
+    workingFolderCurrent: true
+    attributes:
+      skip-front-matter: ""
+      source-highlighter: highlight.js
+      lang: zh
+      toc: ""
+      icons: font
+      stem: asciimath
+      diagram-server-url: https://kroki.io/
+      diagram-server-type: kroki_io
+      diagram-format: svg
+      appendix-caption: 附录
+      appendix-refsig: 附录
+      caution-caption: 注意
+      example-caption: 示例
+      figure-caption: 图表
+      important-caption: 重要
+      last-update-label: 最后更新
+      # listing-caption: 代码
+      listing-caption!:
+      manname-title: 名称
+      note-caption: 笔记
+      preface-title: 序言
+      table-caption: 表格
+      tip-caption: 提示
+      toc-title: 目录
+      untitled-label: 暂无标题
+      version-label: 版本
+      warning-caption: 警告
+menu:
+  main:
+    - identifier: categories
+      name: 分类 
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: archives 
+      name: 存档 
+      url: /archives/
+      weight: 30
+    - identifier: rss
+      name: RSS
+      url: /index.xml
+      weight: 40
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+      - ^dart-sass-embedded$
+      - ^go$
+      - ^npx$
+      - ^postcss$
+      - ^asciidoctor$
+    osEnv:
+      - (?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|RUBYLIB)$
+  funcs:
+    getenv:
+      - ^HUGO_
+  http:
+    methods:
+      - (?i)GET|POST
+    urls:
+      - .*
