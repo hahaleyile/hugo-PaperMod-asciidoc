@@ -198,6 +198,10 @@ end
 
 这是一个块内代码 `GetUrl(http://test.com)` 测试。
 
+gist 测试。
+
+{{< gist spf13 7896402 >}}
+
 == 直译块
 
 .Optional Title
