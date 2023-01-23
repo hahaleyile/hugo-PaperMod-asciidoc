@@ -531,6 +531,7 @@ td.tableblock {
 /* collapsible block */
 
 .post-content details {
+    margin-top: var(--content-gap);
     border: 1px solid var(--primary);
     border-radius: var(--radius);
 }
