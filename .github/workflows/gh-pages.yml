@@ -3,9 +3,9 @@ permissions:
   contents: write
 
 on:
-  push:
-    branches:
-      - master  # Set a branch that will trigger a deployment
+  # push:
+  #   branches:
+  #     - master  # Set a branch that will trigger a deployment
   pull_request:
 
 jobs:
