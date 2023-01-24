@@ -528,6 +528,10 @@ td.tableblock {
     border-right-width: 0;
 }
 
+.post-content table tr p {
+    word-break: normal;
+}
+
 /* collapsible block */
 
 .post-content details {
