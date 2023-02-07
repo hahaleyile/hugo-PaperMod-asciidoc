@@ -25,6 +25,7 @@ markup:
     backend: html5
     extensions:
       - asciidoctor-diagram
+      - asciidoctor_cjk_breaks
     failureLevel: fatal
     noHeaderOrFooter: true
     preserveTOC: false
